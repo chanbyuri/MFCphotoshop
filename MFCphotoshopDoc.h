@@ -65,4 +65,5 @@ public:
 	void OnNegativeImage();
 	void OnAddImage();
 	void OnSubImage();
+	void OnMulImage();
 };
