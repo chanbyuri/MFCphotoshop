@@ -63,4 +63,5 @@ public:
 	virtual void OnCloseDocument();
 	void OnEqualImage();
 	void OnNegativeImage();
+	void OnAddImage();
 };

@@ -43,6 +43,7 @@ protected:
 public:
 	afx_msg void OnEqualImage();
 	afx_msg void OnNegativeImage();
+	afx_msg void OnAddImage();
 };
 
 #ifndef _DEBUG  // MFCphotoshopView.cpp의 디버그 버전

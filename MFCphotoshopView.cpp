@@ -29,6 +29,7 @@ BEGIN_MESSAGE_MAP(CMFCphotoshopView, CView)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
 	ON_COMMAND(ID_EQUAL_IMAGE, &CMFCphotoshopView::OnEqualImage)
 	ON_COMMAND(ID_NEGATIVE_IMAGE, &CMFCphotoshopView::OnNegativeImage)
+	ON_COMMAND(ID_ADD_IMAGE, &CMFCphotoshopView::OnAddImage)
 END_MESSAGE_MAP()
 
 // CMFCphotoshopView 생성/소멸
@@ -136,5 +137,15 @@ void CMFCphotoshopView::OnNegativeImage()
 	CMFCphotoshopDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	pDoc->OnNegativeImage();
+	Invalidate(TRUE);
+}
+
+
+void CMFCphotoshopView::OnAddImage()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CMFCphotoshopDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	pDoc->OnAddImage();
 	Invalidate(TRUE);
 }
