@@ -56,4 +56,5 @@ public:
 	int m_old_width;
 	int m_old_Re_height;
 	int m_old_Re_width;
+	unsigned char** malloc2D(int h, int w);
 };

@@ -136,3 +136,14 @@ void CMFCphotoshopDoc::Dump(CDumpContext& dc) const
 
 
 // CMFCphotoshopDoc 명령
+
+
+unsigned char** CMFCphotoshopDoc::malloc2D(int h, int w)
+{
+	// TODO: 여기에 구현 코드 추가.
+	unsigned char **p;
+	p = (unsigned char**)malloc(h * sizeof(unsigned char*));
+	for (int i = 0; i < h; i++)
+		p[i] = (unsigned char*)malloc(w * sizeof(unsigned char));
+	return p;
+}
