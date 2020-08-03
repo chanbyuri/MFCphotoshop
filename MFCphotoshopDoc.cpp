@@ -374,3 +374,36 @@ void CMFCphotoshopDoc::OnDivImage()
 		}
 	}
 }
+
+
+void CMFCphotoshopDoc::OnAndImage()
+{
+	// TODO: 여기에 구현 코드 추가.
+	if (m_InputImage == NULL)
+		return;
+	// *중요* 출력영상의 크기 결정 --> 알고리즘에 따름..
+	freeOutputImage(m_old_Re_height);
+	m_old_Re_height = m_Re_height = m_height;
+	m_old_Re_height = m_Re_width = m_width;
+
+	// 출력 이미지 메모리 할당
+	m_OutputImage = malloc2D(m_Re_height, m_Re_width);
+	unsigned char **t = malloc2D(m_Re_height, m_Re_width);
+	FILE *rfp;
+	rfp = fopen("C:/Images/Etc_Raw(squre)/circle512.raw", "rb");
+	//if (rfp == NULL) exit(-1);
+
+	for (int i = 0; i < m_Re_height; i++)
+		fread(t[i], sizeof(unsigned char), m_Re_width, rfp);
+	fclose(rfp);
+	// **** 진짜 영상 처리 알고리즘 ***
+	for (int i = 0; i < m_height; i++) {
+		for (int k = 0; k < m_width; k++) {
+			m_OutputImage[i][k] = m_InputImage[i][k] & t[i][k];
+		}
+	}
+
+	for (int i = 0; i < m_Re_height; i++)
+		free(t[i]);
+	t = NULL;
+}
