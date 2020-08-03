@@ -53,5 +53,7 @@ public:
 	int m_Re_height;
 	int m_Re_width;
 	int m_old_height;
-	int m_Re_width;
+	int m_old_width;
+	int m_old_Re_height;
+	int m_old_Re_width;
 };
