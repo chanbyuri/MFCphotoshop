@@ -74,4 +74,6 @@ public:
 	void OnBinaryImage();
 	void OnAverageBinaryImage();
 	void OnTranslation();
+	void OnZoomIn();
+	void Recur(int s, int x, int y);
 };

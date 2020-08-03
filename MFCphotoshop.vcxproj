@@ -190,6 +190,7 @@
     <ClInclude Include="CConstantDlg.h" />
     <ClInclude Include="ChildFrm.h" />
     <ClInclude Include="CXYDIALOG.h" />
+    <ClInclude Include="CZoomRotate.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="MFCphotoshop.h" />
@@ -203,6 +204,7 @@
     <ClCompile Include="CConstantDlg.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="CXYDIALOG.cpp" />
+    <ClCompile Include="CZoomRotate.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="MFCphotoshop.cpp" />
     <ClCompile Include="MFCphotoshopDoc.cpp" />

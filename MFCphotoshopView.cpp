@@ -40,6 +40,7 @@ BEGIN_MESSAGE_MAP(CMFCphotoshopView, CView)
 	ON_COMMAND(ID_BINARY_IMAGE, &CMFCphotoshopView::OnBinaryImage)
 	ON_COMMAND(ID_AVERAGE_BINARY_IMAGE, &CMFCphotoshopView::OnAverageBinaryImage)
 	ON_COMMAND(ID_TRANSLATION, &CMFCphotoshopView::OnTranslation)
+	ON_COMMAND(ID_ZOOM_IN, &CMFCphotoshopView::OnZoomIn)
 END_MESSAGE_MAP()
 
 // CMFCphotoshopView 생성/소멸
@@ -250,5 +251,14 @@ void CMFCphotoshopView::OnTranslation()
 	CMFCphotoshopDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	pDoc->OnTranslation();
+	Invalidate(TRUE);
+}
+
+void CMFCphotoshopView::OnZoomIn()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CMFCphotoshopDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	pDoc->OnZoomIn();
 	Invalidate(TRUE);
 }

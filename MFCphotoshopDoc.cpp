@@ -526,3 +526,79 @@ void CMFCphotoshopDoc::OnTranslation()
 		}
 	}
 }
+#include "CZoomRotate.h"
+void CMFCphotoshopDoc::OnZoomIn()
+{
+	// TODO: 여기에 구현 코드 추가.
+	if (m_InputImage == NULL)
+		return;
+	// *중요* 출력영상의 크기 결정 --> 알고리즘에 따름..
+	CZoomRotate dlg;
+	if (dlg.DoModal() != IDOK)
+		return;
+	// 1radian = 180 / pi*degree
+	float r = 3.141592 * dlg.m_rotatevalue / 180.0;
+	int scale = dlg.m_zvalue;
+	// *중요* 출력영상의 크기 결정 --> 알고리즘에 따름..
+	freeOutputImage(m_old_Re_height);
+	m_old_Re_height = m_Re_height = m_height * scale;
+	m_old_Re_height = m_Re_width = m_width * scale;
+
+	// 출력 이미지 메모리 할당
+	m_OutputImage = malloc2D(m_Re_height, m_Re_width);
+	unsigned char **OI = malloc2D(m_Re_height, m_Re_width);
+
+	for (int i = 0; i < m_height; i++) {
+		for (int k = 0; k < m_width; k++) {
+			m_OutputImage[i * scale][k * scale] = m_InputImage[i][k];
+		}
+	}
+
+	int cx = m_Re_width / 2;
+	int cy = m_Re_height / 2;
+	int hy = m_Re_height - 1;
+	int x, y;
+	for (int i = 0; i < m_height - 1; i++) {
+		for (int k = 0; k < m_width - 1; k++) {
+			x = k * scale; y = i * scale;
+			Recur(scale, x, y);
+		}
+	}
+	for (int i = 0; i < m_Re_height; i++)
+		for (int k = 0; k < m_Re_width; k++)
+			OI[i][k] = m_OutputImage[i][k];
+	freeOutputImage(m_Re_height);
+	m_OutputImage = malloc2D(m_Re_height, m_Re_width);
+
+	int new_i, new_k;
+	for (int i = 0; i < m_Re_height; i++) {
+		for (int k = 0; k < m_Re_width; k++) {
+			new_k = cx + (i - cy) * sin(r) + (k - cx) * cos(r);
+			new_i = cy + (i - cy) * cos(r) - (k - cx) * sin(r);
+			if ((0 <= new_i && new_i < m_Re_height) && (0 <= new_k && new_k < m_Re_width))
+				m_OutputImage[i][k] = OI[new_i][new_k];
+		}
+	}
+
+	for (int i = 0; i < m_Re_height; i++)
+		free(OI[i]);
+	OI = NULL;
+}
+
+void CMFCphotoshopDoc::Recur(int s, int x, int y)
+{
+	int hs = s / 2;
+
+	m_OutputImage[y][x + hs] = (m_OutputImage[y][x] + m_OutputImage[y][x + s]) / 2;
+	m_OutputImage[y + hs][x] = (m_OutputImage[y][x] + m_OutputImage[y + s][x]) / 2;
+	m_OutputImage[y + hs][x + hs] = (m_OutputImage[y][x] + m_OutputImage[y + s][x + s]) / 2;
+	m_OutputImage[y + hs][x + s] = (m_OutputImage[y][x + s] + m_OutputImage[y + s][x + s]) / 2;
+	m_OutputImage[y + s][x + hs] = (m_OutputImage[y + s][x] + m_OutputImage[y + s][x + s]) / 2;
+
+	if (hs > 1) {
+		Recur(hs, x, y);
+		Recur(hs, x + hs, y);
+		Recur(hs, x, y + hs);
+		Recur(hs, x + hs, y + hs);
+	}
+}
