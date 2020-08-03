@@ -170,3 +170,40 @@ void CMFCphotoshopDoc::freeOutputImage(int h)
 	}
 	m_OutputImage = NULL;
 }
+
+BOOL CMFCphotoshopDoc::OnOpenDocument(LPCTSTR lpszPathName)
+{
+	if (!CDocument::OnOpenDocument(lpszPathName))
+		return FALSE;
+
+	// TODO:  여기에 특수화된 작성 코드를 추가합니다.
+	CFile File;
+	File.Open(lpszPathName, CFile::modeRead | CFile::typeBinary);
+	long fsize = (long)File.GetLength();
+	//기존 메모리 해제
+	freeInputImage(m_old_height);
+
+	//핵심 코드
+	m_height = m_width = (int)sqrt((double)fsize);
+	m_old_height = m_height;
+	m_old_width = m_width;
+
+	//메모리 할당
+	m_InputImage = malloc2D(m_height, m_width);
+
+	//파일 --> 입력 메모리
+	for (int i = 0; i < m_height; i++)
+		File.Read(m_InputImage[i], m_width);
+
+	File.Close();
+
+	return TRUE;
+}
+
+void CMFCphotoshopDoc::OnCloseDocument()
+{
+	// TODO: 여기에 특수화된 코드를 추가 및/또는 기본 클래스를 호출합니다.
+	freeInputImage(m_height);
+	freeOutputImage(m_Re_height);
+	CDocument::OnCloseDocument();
+}

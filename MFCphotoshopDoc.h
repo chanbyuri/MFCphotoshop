@@ -59,4 +59,6 @@ public:
 	unsigned char** malloc2D(int h, int w);
 	void freeInputImage(int h);
 	void freeOutputImage(int h);
+	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
+	virtual void OnCloseDocument();
 };
