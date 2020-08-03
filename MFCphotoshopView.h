@@ -56,6 +56,9 @@ public:
 	afx_msg void OnTranslation();
 	afx_msg void OnZoomIn();
 	afx_msg void OnZoomOut();
+	afx_msg void OnMirrorLr();
+	afx_msg void OnMirrorUd();
+	afx_msg void OnMirror();
 };
 
 #ifndef _DEBUG  // MFCphotoshopView.cpp의 디버그 버전

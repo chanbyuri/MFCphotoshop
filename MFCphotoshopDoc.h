@@ -77,4 +77,7 @@ public:
 	void OnZoomIn();
 	void Recur(int s, int x, int y);
 	void OnZoomOut();
+	void OnMirrorLR();
+	void OnMirrorUD();
+	void OnMirror();
 };

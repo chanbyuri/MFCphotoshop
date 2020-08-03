@@ -42,6 +42,9 @@ BEGIN_MESSAGE_MAP(CMFCphotoshopView, CView)
 	ON_COMMAND(ID_TRANSLATION, &CMFCphotoshopView::OnTranslation)
 	ON_COMMAND(ID_ZOOM_IN, &CMFCphotoshopView::OnZoomIn)
 	ON_COMMAND(ID_ZOOM_OUT, &CMFCphotoshopView::OnZoomOut)
+	ON_COMMAND(ID_MIRROR_LR, &CMFCphotoshopView::OnMirrorLr)
+	ON_COMMAND(ID_MIRROR_UD, &CMFCphotoshopView::OnMirrorUd)
+	ON_COMMAND(ID_MIRROR, &CMFCphotoshopView::OnMirror)
 END_MESSAGE_MAP()
 
 // CMFCphotoshopView 생성/소멸
@@ -271,5 +274,33 @@ void CMFCphotoshopView::OnZoomOut()
 	CMFCphotoshopDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	pDoc->OnZoomOut();
+	Invalidate(TRUE);
+}
+
+
+void CMFCphotoshopView::OnMirrorLr()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CMFCphotoshopDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	pDoc->OnMirrorLR();
+	Invalidate(TRUE);
+}
+
+void CMFCphotoshopView::OnMirrorUd()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CMFCphotoshopDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	pDoc->OnMirrorUD();
+	Invalidate(TRUE);
+}
+
+void CMFCphotoshopView::OnMirror()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CMFCphotoshopDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	pDoc->OnMirror();
 	Invalidate(TRUE);
 }

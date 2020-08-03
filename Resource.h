@@ -45,13 +45,19 @@
 #define ID_ZOOM_IN                      32798
 #define ID_GEOMETRYCONVERSION_ZOOMOUT   32799
 #define ID_ZOOM_OUT                     32800
+#define ID_GEOMETRYCONVERSION_MIRROR    32801
+#define ID_MIRROR_LR                    32802
+#define ID_GEOMETRYCONVERSION_MIRROR32803 32803
+#define ID_MIRROR_UD                    32804
+#define ID_GEOMETRYCONVERSION_MIRROR32805 32805
+#define ID_MIRROR                       32806
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        316
-#define _APS_NEXT_COMMAND_VALUE         32801
+#define _APS_NEXT_COMMAND_VALUE         32807
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
