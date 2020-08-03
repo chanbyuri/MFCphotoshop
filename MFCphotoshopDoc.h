@@ -48,4 +48,10 @@ protected:
 public:
 	unsigned char**m_InputImage = NULL;
 	unsigned char**m_OutputImage = NULL;
+	int m_height;
+	int m_width;
+	int m_Re_height;
+	int m_Re_width;
+	int m_old_height;
+	int m_Re_width;
 };
