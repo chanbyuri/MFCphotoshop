@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCphotoshop", "MFCphotoshop.vcxproj", "{EB5CA149-ADA4-4D05-9382-EBAF4424DB89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB5CA149-ADA4-4D05-9382-EBAF4424DB89}.Debug|x64.ActiveCfg = Debug|x64
+		{EB5CA149-ADA4-4D05-9382-EBAF4424DB89}.Debug|x64.Build.0 = Debug|x64
+		{EB5CA149-ADA4-4D05-9382-EBAF4424DB89}.Debug|x86.ActiveCfg = Debug|Win32
+		{EB5CA149-ADA4-4D05-9382-EBAF4424DB89}.Debug|x86.Build.0 = Debug|Win32
+		{EB5CA149-ADA4-4D05-9382-EBAF4424DB89}.Release|x64.ActiveCfg = Release|x64
+		{EB5CA149-ADA4-4D05-9382-EBAF4424DB89}.Release|x64.Build.0 = Release|x64
+		{EB5CA149-ADA4-4D05-9382-EBAF4424DB89}.Release|x86.ActiveCfg = Release|Win32
+		{EB5CA149-ADA4-4D05-9382-EBAF4424DB89}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {134AC627-4D5A-480F-A099-DD40DAE13FAA}
+	EndGlobalSection
+EndGlobal
