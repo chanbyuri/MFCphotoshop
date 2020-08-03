@@ -44,6 +44,7 @@ public:
 	afx_msg void OnEqualImage();
 	afx_msg void OnNegativeImage();
 	afx_msg void OnAddImage();
+	afx_msg void OnSubImage();
 };
 
 #ifndef _DEBUG  // MFCphotoshopView.cpp의 디버그 버전

@@ -64,4 +64,5 @@ public:
 	void OnEqualImage();
 	void OnNegativeImage();
 	void OnAddImage();
+	void OnSubImage();
 };
