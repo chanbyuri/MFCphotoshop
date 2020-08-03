@@ -37,6 +37,7 @@ BEGIN_MESSAGE_MAP(CMFCphotoshopView, CView)
 	ON_COMMAND(ID_OR_IMAGE, &CMFCphotoshopView::OnOrImage)
 	ON_COMMAND(ID_XOR_IMAGE, &CMFCphotoshopView::OnXorImage)
 	ON_COMMAND(ID_GAMMA_IMAGE, &CMFCphotoshopView::OnGammaImage)
+	ON_COMMAND(ID_BINARY_IMAGE, &CMFCphotoshopView::OnBinaryImage)
 END_MESSAGE_MAP()
 
 // CMFCphotoshopView 생성/소멸
@@ -219,5 +220,14 @@ void CMFCphotoshopView::OnGammaImage()
 	CMFCphotoshopDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	pDoc->OnGammaImage();
+	Invalidate(TRUE);
+}
+
+void CMFCphotoshopView::OnBinaryImage()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CMFCphotoshopDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	pDoc->OnBinaryImage();
 	Invalidate(TRUE);
 }

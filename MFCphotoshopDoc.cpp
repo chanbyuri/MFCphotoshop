@@ -451,3 +451,23 @@ void CMFCphotoshopDoc::OnGammaImage()
 		}
 	}
 }
+
+void CMFCphotoshopDoc::OnBinaryImage()
+{
+	// TODO: 여기에 구현 코드 추가.
+	if (m_InputImage == NULL)
+		return;
+	// *중요* 출력영상의 크기 결정 --> 알고리즘에 따름..
+	freeOutputImage(m_old_Re_height);
+	m_old_Re_height = m_Re_height = m_height;
+	m_old_Re_height = m_Re_width = m_width;
+	// 출력 이미지 메모리 할당
+	m_OutputImage = malloc2D(m_Re_height, m_Re_width);
+	// **** 진짜 영상 처리 알고리즘 ***
+	for (int i = 0; i < m_height; i++) {
+		for (int k = 0; k < m_width; k++) {
+			if (m_InputImage[i][k] >= 128) m_OutputImage[i][k] = 255;
+			else m_OutputImage[i][k] = 0;
+		}
+	}
+}

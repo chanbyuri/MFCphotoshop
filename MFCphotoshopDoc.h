@@ -71,4 +71,5 @@ public:
 	void OnOrImage();
 	void OnXorImage();
 	void OnGammaImage();
+	void OnBinaryImage();
 };
