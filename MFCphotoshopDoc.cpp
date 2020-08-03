@@ -413,3 +413,10 @@ void CMFCphotoshopDoc::OnOrImage()
 	// TODO: 여기에 구현 코드 추가.
 	return;
 }
+
+
+void CMFCphotoshopDoc::OnXorImage()
+{
+	// TODO: 여기에 구현 코드 추가.
+	return;
+}

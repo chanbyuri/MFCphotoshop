@@ -35,6 +35,7 @@ BEGIN_MESSAGE_MAP(CMFCphotoshopView, CView)
 	ON_COMMAND(ID_DIV_IMAGE, &CMFCphotoshopView::OnDivImage)
 	ON_COMMAND(ID_AND_IMAGE, &CMFCphotoshopView::OnAndImage)
 	ON_COMMAND(ID_OR_IMAGE, &CMFCphotoshopView::OnOrImage)
+	ON_COMMAND(ID_XOR_IMAGE, &CMFCphotoshopView::OnXorImage)
 END_MESSAGE_MAP()
 
 // CMFCphotoshopView 생성/소멸
@@ -199,5 +200,14 @@ void CMFCphotoshopView::OnOrImage()
 	CMFCphotoshopDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	pDoc->OnOrImage();
+	Invalidate(TRUE);
+}
+
+void CMFCphotoshopView::OnXorImage()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CMFCphotoshopDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	pDoc->OnXorImage();
 	Invalidate(TRUE);
 }

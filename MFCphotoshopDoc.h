@@ -69,4 +69,5 @@ public:
 	void OnDivImage();
 	void OnAndImage();
 	void OnOrImage();
+	void OnXorImage();
 };
