@@ -62,4 +62,5 @@ public:
 	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
 	virtual void OnCloseDocument();
 	void OnEqualImage();
+	void OnNegativeImage();
 };

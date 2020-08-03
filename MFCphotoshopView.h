@@ -42,6 +42,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnEqualImage();
+	afx_msg void OnNegativeImage();
 };
 
 #ifndef _DEBUG  // MFCphotoshopView.cpp의 디버그 버전
