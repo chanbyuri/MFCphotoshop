@@ -57,4 +57,6 @@ public:
 	int m_old_Re_height;
 	int m_old_Re_width;
 	unsigned char** malloc2D(int h, int w);
+	void freeInputImage(int h);
+	void freeOutputImage(int h);
 };

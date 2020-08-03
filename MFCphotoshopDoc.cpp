@@ -147,3 +147,26 @@ unsigned char** CMFCphotoshopDoc::malloc2D(int h, int w)
 		p[i] = (unsigned char*)malloc(w * sizeof(unsigned char));
 	return p;
 }
+
+
+void CMFCphotoshopDoc::freeInputImage(int h)
+{
+	// TODO: 여기에 구현 코드 추가.
+	if (m_InputImage != NULL) {
+		for (int i = 0; i < h; i++)
+			free(m_InputImage[i]);
+		free(m_InputImage);
+	}
+	m_InputImage = NULL;
+}
+
+void CMFCphotoshopDoc::freeOutputImage(int h)
+{
+	// TODO: 여기에 구현 코드 추가.
+	if (m_OutputImage != NULL) {
+		for (int i = 0; i < h; i++)
+			free(m_OutputImage[i]);
+		free(m_OutputImage);
+	}
+	m_OutputImage = NULL;
+}
