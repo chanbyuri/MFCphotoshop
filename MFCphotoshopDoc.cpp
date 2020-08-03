@@ -407,3 +407,9 @@ void CMFCphotoshopDoc::OnAndImage()
 		free(t[i]);
 	t = NULL;
 }
+
+void CMFCphotoshopDoc::OnOrImage()
+{
+	// TODO: 여기에 구현 코드 추가.
+	return;
+}

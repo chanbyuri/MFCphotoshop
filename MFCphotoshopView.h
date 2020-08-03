@@ -48,6 +48,7 @@ public:
 	afx_msg void OnMulImage();
 	afx_msg void OnDivImage();
 	afx_msg void OnAndImage();
+	afx_msg void OnOrImage();
 };
 
 #ifndef _DEBUG  // MFCphotoshopView.cpp의 디버그 버전

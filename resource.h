@@ -17,13 +17,21 @@
 #define ID_ADD_IMAGE                    32776
 #define ID_PIXELPROCESSING_SUBIMAGE     32777
 #define ID_SUB_IMAGE                    32778
+#define ID_PIXELPROCESSING_MULIMAGE     32779
+#define ID_MUL_IMAGE                    32780
+#define ID_PIXELPROCESSING_DIVIMAGE     32781
+#define ID_DIV_IMAGE                    32782
+#define ID_PIXELPROCESSING_ANDIMAGE     32783
+#define ID_AND_IMAGE                    32784
+#define ID_PIXELPROCESSING_ORIMAGE      32785
+#define ID_OR_IMAGE                     32786
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        312
-#define _APS_NEXT_COMMAND_VALUE         32779
+#define _APS_NEXT_COMMAND_VALUE         32787
 #define _APS_NEXT_CONTROL_VALUE         1001
 #define _APS_NEXT_SYMED_VALUE           310
 #endif

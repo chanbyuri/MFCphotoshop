@@ -68,4 +68,5 @@ public:
 	void OnMulImage();
 	void OnDivImage();
 	void OnAndImage();
+	void OnOrImage();
 };
