@@ -72,4 +72,5 @@ public:
 	void OnXorImage();
 	void OnGammaImage();
 	void OnBinaryImage();
+	void OnAverageBinaryImage();
 };

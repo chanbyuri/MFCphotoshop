@@ -52,6 +52,7 @@ public:
 	afx_msg void OnXorImage();
 	afx_msg void OnGammaImage();
 	afx_msg void OnBinaryImage();
+	afx_msg void OnAverageBinaryImage();
 };
 
 #ifndef _DEBUG  // MFCphotoshopView.cpp의 디버그 버전
