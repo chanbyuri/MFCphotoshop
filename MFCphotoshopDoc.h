@@ -80,4 +80,5 @@ public:
 	void OnMirrorLR();
 	void OnMirrorUD();
 	void OnMirror();
+	virtual BOOL OnSaveDocument(LPCTSTR lpszPathName);
 };

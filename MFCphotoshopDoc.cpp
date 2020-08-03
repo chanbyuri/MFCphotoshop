@@ -691,3 +691,24 @@ void CMFCphotoshopDoc::OnMirror()
 		}
 	}
 }
+
+BOOL CMFCphotoshopDoc::OnSaveDocument(LPCTSTR lpszPathName)
+{
+	// TODO: 여기에 특수화된 코드를 추가 및/또는 기본 클래스를 호출합니다.
+	if (m_OutputImage == NULL)
+		return false;
+
+	CFile File;
+	// static TCHAR BASED_CODE szFilter[] = _T("이미지 파일(*.BMP, *.GIF, *.JPG) | *.BMP;*.GIF;*.JPG;*.bmp;*.jpg;*.gif |모든파일(*.*)|*.*||");
+	static TCHAR BASED_CODE szFilter[] = _T("RAW 파일(*.RAW) | *.raw |모든파일(*.*)|*.*||");
+
+	CFileDialog SaveDlg(TRUE, _T("*.raw"), _T(""), OFN_HIDEREADONLY, szFilter);
+
+	if (SaveDlg.DoModal() == IDOK) {
+		File.Open(SaveDlg.GetPathName(), CFile::modeCreate | CFile::modeWrite);
+		for (int i = 0; i < m_Re_height; i++)
+			File.Write(m_OutputImage[i], m_Re_width);
+		File.Close();
+	}
+	return true;
+}
