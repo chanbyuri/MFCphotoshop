@@ -27,6 +27,7 @@ BEGIN_MESSAGE_MAP(CMFCphotoshopView, CView)
 	ON_COMMAND(ID_FILE_PRINT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
+	ON_COMMAND(ID_EQUAL_IMAGE, &CMFCphotoshopView::OnEqualImage)
 END_MESSAGE_MAP()
 
 // CMFCphotoshopView 생성/소멸
@@ -51,7 +52,7 @@ BOOL CMFCphotoshopView::PreCreateWindow(CREATESTRUCT& cs)
 
 // CMFCphotoshopView 그리기
 
-void CMFCphotoshopView::OnDraw(CDC* /*pDC*/)
+void CMFCphotoshopView::OnDraw(CDC* pDC)
 {
 	CMFCphotoshopDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
@@ -59,6 +60,19 @@ void CMFCphotoshopView::OnDraw(CDC* /*pDC*/)
 		return;
 
 	// TODO: 여기에 원시 데이터에 대한 그리기 코드를 추가합니다.
+	unsigned char R, G, B;
+	for (int i = 0; i < pDoc->m_height; i++)
+		for (int k = 0; k < pDoc->m_width; k++) {
+			R = G = B = pDoc->m_InputImage[i][k];
+			pDC->SetPixel(k + 5, i + 5, RGB(R, G, B));
+		}
+
+	for (int i = 0; i < pDoc->m_Re_height; i++)
+		for (int k = 0; k < pDoc->m_Re_width; k++) {
+			R = G = B = pDoc->m_OutputImage[i][k];
+			pDC->SetPixel(k + 5 + pDoc->m_height + 5, i + 5, RGB(R, G, B));
+		}
+
 }
 
 
@@ -103,3 +117,13 @@ CMFCphotoshopDoc* CMFCphotoshopView::GetDocument() const // 디버그되지 않�
 
 
 // CMFCphotoshopView 메시지 처리기
+
+
+void CMFCphotoshopView::OnEqualImage()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CMFCphotoshopDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	pDoc->OnEqualImage();
+	Invalidate(TRUE);
+}

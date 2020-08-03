@@ -61,4 +61,5 @@ public:
 	void freeOutputImage(int h);
 	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
 	virtual void OnCloseDocument();
+	void OnEqualImage();
 };
