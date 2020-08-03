@@ -70,4 +70,5 @@ public:
 	void OnAndImage();
 	void OnOrImage();
 	void OnXorImage();
+	void OnGammaImage();
 };

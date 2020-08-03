@@ -50,6 +50,7 @@ public:
 	afx_msg void OnAndImage();
 	afx_msg void OnOrImage();
 	afx_msg void OnXorImage();
+	afx_msg void OnGammaImage();
 };
 
 #ifndef _DEBUG  // MFCphotoshopView.cpp의 디버그 버전
