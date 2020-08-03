@@ -73,4 +73,5 @@ public:
 	void OnGammaImage();
 	void OnBinaryImage();
 	void OnAverageBinaryImage();
+	void OnTranslation();
 };

@@ -8,7 +8,11 @@
 #define IDR_MFCphotoshopTYPE            130
 #define ID_WINDOW_MANAGER               131
 #define IDD_CONSTANT1                   310
+#define IDD_DIALOG1                     312
+#define IDD_XYDIALOG                    312
 #define IDC_VALUE1                      1000
+#define IDC_X_VALUE                     1001
+#define IDC_Y_VALUE                     1002
 #define ID_PIXELPROCESSING_EQUALIMAGE   32771
 #define ID_EQUAL_IMAGE                  32772
 #define ID_PIXELPROCESSING_NEGATIVEIMAGE 32773
@@ -33,14 +37,16 @@
 #define ID_BINARY_IMAGE                 32792
 #define ID_PIXELPROCESSING_AVERAGEBINARYIMAGE 32793
 #define ID_AVERAGE_BINARY_IMAGE         32794
+#define ID_GEOMETRYCONVERSION_TRANSLATION 32795
+#define ID_TRANSLATION                  32796
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        312
-#define _APS_NEXT_COMMAND_VALUE         32795
-#define _APS_NEXT_CONTROL_VALUE         1001
+#define _APS_NEXT_RESOURCE_VALUE        314
+#define _APS_NEXT_COMMAND_VALUE         32797
+#define _APS_NEXT_CONTROL_VALUE         1002
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif
