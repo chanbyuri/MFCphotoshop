@@ -602,3 +602,29 @@ void CMFCphotoshopDoc::Recur(int s, int x, int y)
 		Recur(hs, x + hs, y + hs);
 	}
 }
+
+void CMFCphotoshopDoc::OnZoomOut()
+{
+	// TODO: 여기에 구현 코드 추가.
+	if (m_InputImage == NULL)
+		return;
+	// *중요* 출력영상의 크기 결정 --> 알고리즘에 따름..
+	CConstantDlg dlg;
+	if (dlg.DoModal() != IDOK)
+		return;
+	
+	int scale = dlg.m_value1;
+	freeOutputImage(m_old_Re_height);
+	m_old_Re_height = m_Re_height = m_height / scale;
+	m_old_Re_height = m_Re_width = m_width / scale;
+
+	// 출력 이미지 메모리 할당
+	m_OutputImage = malloc2D(m_Re_height, m_Re_width);
+
+	// **** 진짜 영상 처리 알고리즘 ***
+	for (int i = 0; i < m_Re_height; i++) {
+		for (int k = 0; k < m_Re_width; k++) {
+			m_OutputImage[i][k] = m_InputImage[i*scale][k*scale];
+		}
+	}
+}

@@ -9,7 +9,6 @@
 #define ID_WINDOW_MANAGER               131
 #define IDD_CONSTANT1                   310
 #define IDD_XYDIALOG                    312
-#define IDD_DIALOG1                     314
 #define IDD_ZOOM_ROTATE                 314
 #define IDC_VALUE1                      1000
 #define IDC_X_VALUE                     1001
@@ -44,13 +43,15 @@
 #define ID_TRANSLATION                  32796
 #define ID_GEOMETRYCONVERSION_ZOOMIN    32797
 #define ID_ZOOM_IN                      32798
+#define ID_GEOMETRYCONVERSION_ZOOMOUT   32799
+#define ID_ZOOM_OUT                     32800
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        316
-#define _APS_NEXT_COMMAND_VALUE         32799
+#define _APS_NEXT_COMMAND_VALUE         32801
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           310
 #endif

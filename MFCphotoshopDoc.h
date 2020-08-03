@@ -76,4 +76,5 @@ public:
 	void OnTranslation();
 	void OnZoomIn();
 	void Recur(int s, int x, int y);
+	void OnZoomOut();
 };
